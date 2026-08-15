@@ -137,6 +137,13 @@ a:hover{color:var(--pulse-deep);border-bottom-color:var(--pulse-deep)}
 .masthead .jump{font-size:var(--t-label);letter-spacing:var(--track-label);
   text-transform:uppercase;font-weight:500;color:var(--slate);border-bottom-color:var(--held)}
 .masthead .jump:hover{color:var(--pulse)}
+/* On a phone the wordmark and two links will not share a row without both
+   breaking mid-word. Give the links their own row rather than let them wrap. */
+@media (max-width:480px){
+  .masthead{flex-wrap:wrap;row-gap:var(--s-3)}
+  .masthead nav{width:100%;gap:var(--s-5)}
+  .masthead .jump{white-space:nowrap}
+}
 
 /* ---- hero --------------------------------------------------------------- */
 .hero{padding-top:clamp(3rem,7vh,6rem)}
