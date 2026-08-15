@@ -196,9 +196,11 @@ code{font-family:ui-monospace,Menlo,monospace;font-size:.85em;
 
 <section>
   <p class="eyebrow">07 &mdash; Motion</p>
-  <h2>One sequence, then stillness</h2>
-  <p>The hero plate draws itself, a madder pulse travels up from the ankle, stalls between the knee and the hip, the gap closes, and it goes through to the head. Roughly seven seconds, once, on load. After that the only movement on the page is the spine filling as you scroll and colour transitions on hover.</p>
-  <p class="note">Everything is inside <code>@media (prefers-reduced-motion: no-preference)</code>. With reduced motion the plate renders complete and the caption is visible from the start &mdash; nothing is lost, only the performance.</p>
+  <h2>Two sequences, then stillness</h2>
+  <p>The hero plate draws itself, a madder pulse travels up from the ankle, stalls between the knee and the hip, the gap closes, and it goes through to the head. Roughly seven seconds, once, on load.</p>
+  <p>The portrait is the second and last: three washes bloom from separate points and run together over two seconds, so that a painting arrives by being painted. It fires when the figure reaches the viewport, not on load &mdash; the portrait sits most of the way down the page, so a load animation would play to nobody. It runs once and does not repeat on the way back up.</p>
+  <p>Beyond those two, the only movement is the spine filling as you scroll and colour transitions on hover. A third sequence would cost the plate its authority; if something new needs attention, give it space instead.</p>
+  <p class="note">Everything is inside <code>@media (prefers-reduced-motion: no-preference)</code>. With reduced motion the plate renders complete, the caption is visible from the start, and the portrait is simply there &mdash; nothing is lost, only the performance. The wash also depends on script: the mask is only applied once JavaScript arms it, so without JavaScript, or without <code>IntersectionObserver</code>, the portrait never hides in the first place.</p>
 </section>
 
 <section>
@@ -209,7 +211,7 @@ code{font-family:ui-monospace,Menlo,monospace;font-size:.85em;
     <li class="yes"><b>Keyboard</b><p>A skip link, and a visible madder focus ring with 4px offset on everything interactive.</p></li>
     <li class="yes"><b>Screen readers</b><p>The plate carries a full text description. Section labels are real headings or paragraphs, never image text.</p></li>
     <li class="yes"><b>Print</b><p>A print stylesheet exists because parents will print this and hand it to a grandparent or a paediatrician. Ink on white, the diagram and navigation dropped, sections kept off page breaks.</p></li>
-    <li class="yes"><b>Weight</b><p>One HTML file, two webfonts, twenty lines of JavaScript. It should open fast on a phone on Indian mobile data.</p></li>
+    <li class="yes"><b>Weight</b><p>One HTML file, two webfonts, about thirty lines of JavaScript. It should open fast on a phone on Indian mobile data.</p></li>
   </ul>
 </section>
 
