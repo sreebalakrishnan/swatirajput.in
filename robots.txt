@@ -1,0 +1,29 @@
+# swatirajput.in — Sensing Movement, the work of Swati Rajput.
+# This page exists to be found, read and quoted. Crawlers are welcome.
+
+User-agent: *
+Allow: /
+Disallow: /system.html
+
+# Named explicitly so the intent is unambiguous rather than inherited.
+User-agent: GPTBot
+Allow: /
+Disallow: /system.html
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /system.html
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /system.html
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /system.html
+
+User-agent: CCBot
+Allow: /
+Disallow: /system.html
+
+Sitemap: https://swatirajput.in/sitemap.xml

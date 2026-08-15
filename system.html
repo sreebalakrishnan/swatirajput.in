@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Spine — design system for swatirajput.in</title>
+<meta name="robots" content="noindex, nofollow">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%23E4E7E7%22%2F%3E%3Cpath%20d%3D%22M16%204V19%22%20stroke%3D%22%231C2223%22%20stroke-width%3D%222.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M16%2019V28%22%20stroke%3D%22%231C2223%22%20stroke-width%3D%222.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2219%22%20r%3D%224%22%20fill%3D%22%231C2223%22%2F%3E%3C%2Fsvg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -211,14 +212,18 @@ code{font-family:ui-monospace,Menlo,monospace;font-size:.85em;
     <li class="yes"><b>Keyboard</b><p>A skip link, and a visible madder focus ring with 4px offset on everything interactive.</p></li>
     <li class="yes"><b>Screen readers</b><p>The plate carries a full text description. Section labels are real headings or paragraphs, never image text.</p></li>
     <li class="yes"><b>Print</b><p>A print stylesheet exists because parents will print this and hand it to a grandparent or a paediatrician. Ink on white, the diagram and navigation dropped, sections kept off page breaks.</p></li>
-    <li class="yes"><b>Weight</b><p>One HTML file, two webfonts, about thirty lines of JavaScript. It should open fast on a phone on Indian mobile data.</p></li>
+    <li class="yes"><b>Weight</b><p>One page per language at about 20KB, one shared stylesheet, one shared portrait, two webfonts, about thirty lines of JavaScript. It should open fast on a phone on Indian mobile data.</p></li>
   </ul>
 </section>
 
 <section style="border:0">
   <p class="eyebrow">09 &mdash; If you hand this to a developer</p>
   <h2>What they need to know</h2>
-  <p>Tokens live in <code>:root</code> in <code>index.html</code>, commented and grouped. There is no build step, no framework, no dependency beyond Google Fonts. To add a page, copy the head, the token block, and the <code>.band</code> markup pattern, then write content. If a new colour or a third typeface feels necessary, the answer is almost certainly a different use of space instead.</p>
+  <p>Tokens live in <code>:root</code> at the top of <code>style.css</code>, commented and grouped. There is no build step, no framework, no dependency beyond Google Fonts. To add a page, copy the head, link the stylesheet, and reuse the <code>.band</code> markup pattern. If a new colour or a third typeface feels necessary, the answer is almost certainly a different use of space instead.</p>
+  <p class="note">The site was one self-contained file until it needed an Open Graph image and a second language. A share card has to be a fetchable URL, and a second language means a second page &mdash; so the CSS, the script, the portrait and the icons became shared files rather than being duplicated per language and left to drift. What was bought with that: each page is now about 20KB, and a reader who visits both languages downloads the 103KB portrait once.</p>
+
+  <h3 style="margin-top:1.5rem">Languages</h3>
+  <p class="note">English at the root, French at <code>/fr/</code>. Each page declares <code>hreflang</code> for both plus <code>x-default</code>, and both are listed in <code>sitemap.xml</code>. The language switch is not a new component &mdash; it is another <code>.jump</code> link in the masthead. To add a language, copy a page, translate it including the plate labels and the <code>aria-label</code> text, and add the pair of <code>hreflang</code> lines to every existing page. Placeholders are mirrored across languages so an unwritten fact is visibly unwritten in all of them.</p>
 </section>
 
 </div>
