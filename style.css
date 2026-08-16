@@ -301,3 +301,29 @@ footer p{max-width:36em;margin:0}
    browser fetches it once for the whole site.
    ========================================================================== */
 :root{--portrait:url("/swati.jpg")}
+
+/* ---- gate ---------------------------------------------------------------
+   A curtain over an unfinished page. See gate.js: it hides the page from a
+   visitor, not from anyone who looks at the source. */
+.gate{display:none}
+html.locked{overflow:hidden}
+html.locked body > *:not(.gate){display:none}
+html.locked .gate{display:flex;position:fixed;inset:0;background:var(--paper);
+  align-items:center;justify-content:center;padding:var(--s-5)}
+.gate-inner{width:100%;max-width:22rem}
+.gate .mark{display:block;margin-bottom:var(--s-6)}
+.gate-title{font-family:var(--serif);font-weight:300;font-size:var(--t-h2);
+  line-height:var(--lh-head);letter-spacing:-.01em;margin:0 0 var(--s-3)}
+.gate p{color:var(--slate);font-size:var(--t-small);margin:0 0 var(--s-5);max-width:none}
+.gate form{display:flex;flex-wrap:wrap;gap:var(--s-3)}
+.gate label{font-size:var(--t-label);letter-spacing:var(--track-label);
+  text-transform:uppercase;font-weight:500;color:var(--slate);width:100%}
+.gate input{flex:1 1 11rem;min-width:0;font-family:var(--sans);font-size:var(--t-body);
+  padding:.8rem .9rem;border:1px solid var(--held);background:var(--paper-2);
+  color:var(--ink);border-radius:0}
+.gate input:focus-visible{outline:2px solid var(--pulse);outline-offset:2px}
+.gate button{font-family:var(--sans);font-weight:500;font-size:var(--t-label);
+  letter-spacing:var(--track-label);text-transform:uppercase;padding:.8rem 1.4rem;
+  border:1px solid var(--pulse);background:var(--pulse);color:var(--paper);cursor:pointer}
+.gate button:hover{background:var(--pulse-deep);border-color:var(--pulse-deep)}
+.gate-error{width:100%;margin:0;color:var(--pulse);font-size:var(--t-small)}

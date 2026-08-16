@@ -29,6 +29,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>.gate{display:none}html.locked{overflow:hidden}html.locked body>*:not(.gate){display:none}html.locked .gate{display:flex}</style>
+<script src="/gate.js"></script>
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">
 {
@@ -63,6 +65,20 @@
 </script>
 </head>
 <body>
+<div class="gate" role="dialog" aria-modal="true" aria-labelledby="gate-title">
+  <div class="gate-inner">
+    <svg class="mark" width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4V19" stroke="#1C2223" stroke-width="2.2" stroke-linecap="round"/><path d="M16 19V28" stroke="#8E3B33" stroke-width="2.2" stroke-linecap="round"/><circle cx="16" cy="19" r="4" fill="#8E3B33"/></svg>
+    <p class="gate-title" id="gate-title">Sensing Movement</p>
+    <p>Cette page est encore en cours d&rsquo;&eacute;criture. Saisissez le code pour la lire.</p>
+    <form>
+      <label for="gate-code">Code d&rsquo;acc&egrave;s</label>
+      <input id="gate-code" type="password" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false">
+      <button type="submit">Entrer</button>
+      <p class="gate-error" hidden>Ce n&rsquo;est pas le bon code.</p>
+    </form>
+  </div>
+</div>
+
 <a class="skip" href="#main">Aller au contenu</a>
 
 <div class="page">
