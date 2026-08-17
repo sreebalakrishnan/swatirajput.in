@@ -355,3 +355,14 @@ html.locked .gate{display:flex;position:fixed;inset:0;background:var(--paper);
 .signoff{font-family:var(--serif);font-style:italic;font-weight:300;
   font-size:var(--t-lede);margin-top:var(--s-5)}
 
+/* the recording itself — native controls, deliberately unstyled beyond the
+   frame: a custom player would be a component the system does not want.
+   preload="none" matters more than any of this: nothing is fetched until
+   someone presses play. */
+.invite-audio{margin:var(--s-6) 0 0;padding:var(--s-5);background:var(--paper-2);max-width:32rem}
+.invite-audio .label{margin-bottom:var(--s-3)}
+.invite-audio audio{width:100%;margin-bottom:var(--s-3)}
+.invite-audio .quiet{margin:0}
+.invite-transcript-head{margin-bottom:var(--s-6)}
+.invite-transcript-head .label{margin-bottom:var(--s-2)}
+
